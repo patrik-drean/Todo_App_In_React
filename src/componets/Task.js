@@ -14,8 +14,10 @@ class Task extends React.Component {
 
     render() {
         return (
-            <div style={taskWrapperStyle}>
-                <p>Task {this.props.taskId}: {this.props.description}</p>
+            <div onClick={() => this.props.deleteTask(this.props.id)}
+                style={taskWrapperStyle}
+            >
+                <p>Task {this.props.id}: {this.props.description}</p>
             </div>
         );
     }
