@@ -5,7 +5,7 @@ const taskWrapperStyle = {
     height: "60px",
     width: "40%",
     margin: "10px auto",
-    border: "4px solid #fcfcb0",
+    border: "5px solid #fcfcb0",
     fontFamily: "Georgia",
     fontSize: "15pt",
 }

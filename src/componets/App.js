@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/App.css';
-import Task from './Task';
+import TaskList from './TaskList';
 
 const appStyle = {
     margin: "20px",
@@ -21,7 +21,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="App" style={appStyle}>
-                {this.state.tasks.map(task => <Task {...task} />)}
+                <TaskList tasks={this.state.tasks} />
             </div>
         );
     }
