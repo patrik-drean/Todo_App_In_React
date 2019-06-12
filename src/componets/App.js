@@ -7,13 +7,21 @@ const appStyle = {
 }
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            tasks: [
+                {taskId: 0, description: "Clean the car"},
+                {taskId: 1, description: "Go shopping"},
+                {taskId: 2, description: "Deliver a baby"},
+            ],
+        }
+    }
 
     render() {
         return (
             <div className="App" style={appStyle}>
-                <Task />
-                <Task />
-                <Task />
+                {this.state.tasks.map(task => <Task {...task} />)}
             </div>
         );
     }
