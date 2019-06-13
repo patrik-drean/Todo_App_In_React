@@ -18,19 +18,35 @@ class TaskList extends React.Component {
     render() {
         let deleteTask = (idToDelete) => {
             let updatedTasks = this.state.tasks.filter(function (task) {
-                console.log(task.id, idToDelete);
                 return task.id !== idToDelete;
-            })
+            });
 
             this.setState({tasks: updatedTasks});
-            console.log(updatedTasks);
         }
+
+        let addTask = (taskDescription) => {
+            let tasks = this.state.tasks;
+            let newTask = {id: tasks.length, description: taskDescription};
+            this.setState({tasks: tasks.append(newTask)});
+        }
+
+        // let editTask = (idToEdit) => {
+        //     let updatedTasks = this.state.tasks.filter(function (task) {
+        //         if (task.id !== idToEdit) {
+                    
+        //         }
+        //     });
+
+        //     this.setState({tasks: updatedTasks});
+        // }
+        
 
         let taskComponentList = this.state.tasks.map(task => 
                 <Task 
                     {...task} 
                     key={task.id} 
                     deleteTask={deleteTask}
+                    addTask={addTask}
                 />
             );
 
